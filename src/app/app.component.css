@@ -1,0 +1,26 @@
+.app-container {
+    display: flex;
+    justify-content: center; /* Center the containers horizontally */
+    align-items: center; /* Center the containers vertically */
+    width: 100%; /* Full width of the parent */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    gap: 20px; /* Optional: Add space between the two containers */
+}
+
+.container-pos, .kds-pos {
+    width: 600px; /* Fixed width for both containers */
+    height: 500px; /* Fixed height for both containers */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    border: 2px solid black; /* Optional: Add border to visualize the containers */
+}
+
+.container-pos {
+    background-color: lightblue; /* Optional: Different background color for visualization */
+}
+
+.kds-pos {
+    background-color: lightgreen; /* Optional: Different background color for visualization */
+}
