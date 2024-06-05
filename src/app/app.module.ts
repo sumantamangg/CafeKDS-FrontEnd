@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PosComponent } from './pos/pos.component';
 import { KdsComponent } from './kds/kds.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { KdsComponent } from './kds/kds.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

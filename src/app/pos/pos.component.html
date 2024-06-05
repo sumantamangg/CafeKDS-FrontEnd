@@ -5,15 +5,34 @@
           <button type="button" class="btn btn-primary mb-2" (click)="addItem('Latte')">Latte</button>
           <button type="button" class="btn btn-primary mb-2" (click)="addItem('Flat White')">Flat White</button>
           <button type="button" class="btn btn-primary mb-2" (click)="addItem('Cappuccino')">Cappuccino</button>
-          <button type="button" class="btn btn-secondary mt-4" (click)="openOptions()">Options</button>
+          <button type="button" class="btn btn-secondary mt-4" (click)="openOptions(optionContent)" [disabled]="selectedSaleItemIndex === -1">Options</button>
+          <button type="button" class="btn btn-secondary mt-4" (click)="onRemoveSaleItem()">Rmove</button>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 sale-item-list">
         <h3>Current Sale</h3>
         <ul class="list-group">
-          <li *ngFor="let item of saleItems" class="list-group-item">{{ item }}</li>
+          <li *ngFor="let item of saleItems; let i = index"
+            type="button" (click)="onSelectedSaleItem(i)" class="list-group-item"
+            [ngClass]="{'selected-aleItem': selectedSaleItemIndex === i}">
+            {{item.DrinkSize}} {{ item.DrinkType }} 
+            <ul>
+              <li class="salesItem-comment" *ngFor="let comment of item.Comment">
+                {{comment}}
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </div>
+
+<ng-template #optionContent>
+  <span class="option-heading"> <h3>Options</h3> </span>
+  <div class="button-grid">
+    <button type="button" class="grid-button" 
+      *ngFor="let button of buttons" class="grid-button" (click)="onClickedComment(button)">
+      {{ button }}</button>
+  </div>
+</ng-template>
   

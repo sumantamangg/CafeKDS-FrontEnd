@@ -1,0 +1,33 @@
+.sale-item-list {
+    height: 270px; /* Set the desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Optionally hide horizontal scrolling */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Optional: Add padding for better spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
+  }
+  
+  .selected-aleItem {
+    background-color: aqua;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Adjust spacing between buttons */
+    padding: 20px;
+  }
+  
+  .grid-button {
+    padding: 20px;
+    background-color: rgb(143, 143, 240);
+    color: white;
+    /* Customize button styles here (optional) */
+  }
+  
+  .option-heading {
+    padding: 5px;
+  }
+
+
+  

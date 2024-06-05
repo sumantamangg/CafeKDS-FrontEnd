@@ -1,26 +1,53 @@
 .app-container {
     display: flex;
-    justify-content: center; /* Center the containers horizontally */
-    align-items: center; /* Center the containers vertically */
-    width: 100%; /* Full width of the parent */
-    height: 100vh; /* Full height of the viewport */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
     padding: 20px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    gap: 20px; /* Optional: Add space between the two containers */
-}
-
-.container-pos, .kds-pos {
-    width: 600px; /* Fixed width for both containers */
-    height: 500px; /* Fixed height for both containers */
+    box-sizing: border-box;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  }
+  
+  .container-pos, .kds-pos {
+    flex: 1 1 45%; /* Allow the containers to grow, shrink, and set a base width */
+    min-width: 500px; /* Minimum width for each container */
+    height: 50vh; /* Relative height for each container */
+    max-height: 500px; /* Maximum height for each container */
     padding: 10px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    border: 2px solid black; /* Optional: Add border to visualize the containers */
-}
-
-.container-pos {
-    background-color: lightblue; /* Optional: Different background color for visualization */
-}
-
-.kds-pos {
-    background-color: lightgreen; /* Optional: Different background color for visualization */
-}
+    box-sizing: border-box;
+    border: 2px solid black;
+  }
+  
+  .container-pos {
+    background-color: lightblue;
+  }
+  
+  .kds-pos {
+    background-color: lightgreen;
+  }
+  
+  .sale-item-list {
+    height: calc(100% - 50px); /* Adjust height relative to the container */
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #ff0000;
+  }
+  
+  @media (max-width: 768px) {
+    .container-pos, .kds-pos {
+      flex: 1 1 100%; /* Stack containers vertically on small screens */
+      height: auto; /* Let height adjust to content */
+    }
+  }
+  
