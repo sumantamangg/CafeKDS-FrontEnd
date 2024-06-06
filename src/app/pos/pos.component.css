@@ -7,8 +7,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
   }
   
-  .selected-aleItem {
+  .selected-saleItem {
     background-color: aqua;
+  }
+
+  .selected-saleItem-option {
+    background-color: rgb(231, 231, 231);
   }
 
   .button-grid {

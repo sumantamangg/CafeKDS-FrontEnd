@@ -13,11 +13,13 @@
         <h3>Current Sale</h3>
         <ul class="list-group">
           <li *ngFor="let item of saleItems; let i = index"
-            type="button" (click)="onSelectedSaleItem(i)" class="list-group-item"
-            [ngClass]="{'selected-aleItem': selectedSaleItemIndex === i}">
+            type="button" (click)="onSelectedSaleItem(i)" class="list-group-item" 
+            [ngClass]="{'selected-saleItem': selectedSaleItemIndex === i}">
             {{item.DrinkSize}} {{ item.DrinkType }} 
             <ul>
-              <li class="salesItem-comment" *ngFor="let comment of item.Comment">
+              <li type="button" class="salesItem-comment" *ngFor="let comment of item.Comment; let j = index"
+                (click)="onSelectedSaleItemOption(j)"
+                [ngClass]="{'selected-saleItem-option': selectedSaleItemOptionIndex === j}">
                 {{comment}}
               </li>
             </ul>
@@ -31,7 +33,8 @@
   <span class="option-heading"> <h3>Options</h3> </span>
   <div class="button-grid">
     <button type="button" class="grid-button" 
-      *ngFor="let button of buttons" class="grid-button" (click)="onClickedComment(button)">
+      *ngFor="let button of buttons" class="grid-button" (click)="onClickedComment(button)"
+      [disabled]="saleItems[selectedSaleItemIndex].Comment.includes(button)">
       {{ button }}</button>
   </div>
 </ng-template>
